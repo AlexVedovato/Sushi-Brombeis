@@ -1,0 +1,34 @@
+<li class="menuItem">
+  <picture  class="imageMenuItem">
+    <source srcset="assets/Images/sushi_plates/{{NomePiattoUnderscored}}.webp" type="image/webp">
+    <img src="assets/Images/sushi_plates/{{NomePiattoUnderscored}}.jpg" alt="">
+  </picture>
+  <div class="infoItem">
+    <dl>
+      <dt class="nomePiatto" data-title="Nome Piatto" lang="it">
+        {{NomePiatto}}
+      </dt>
+      <dd class="ingradienti" data-title="Descrizione ingredienti">
+        {{Descrizione}}
+      </dd>
+      <dd data-title="Quantità">
+        Quantità:
+        <span class="infoPlateImportant infoPlates">{{Quantita}}</span>
+      </dd>
+      <dd data-title="NumeroTavolo">
+        Tavolo:
+        <span class="infoPlateImportant infoPlates">{{NTavolo}}</span>
+      </dd>
+      <dd data-title="Orario">
+        Orario ordinazione:
+        <span class="infoPlateImportant infoPlates">{{Ora}}</span>
+      </dd>
+    </dl>
+    <form action="process/aggiornaStatoConsegna.php" method="post">
+      <input type="hidden" name="orario_ordine" value="{{Orario}}">
+      <input type="hidden" name="ID_piatto" value="{{IDPiatto}}">
+      <input type="hidden" name="cliente" value="{{Cliente}}">
+      <input type="submit" class="button azioneStandard" title="Ordine piatto {{IDPiatto}} in quantità {{Quantita}} per il tavolo {{NTavolo}} delle ore {{Ora}}" value="Fatto">
+    </form>
+  </div>
+</li>

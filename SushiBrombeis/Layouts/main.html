@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" >
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" >
+    <meta name="keywords" content="{{keywords}}" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="icon" href="assets/icon/icona.png" type="image/png" >
+    <link rel="stylesheet" href="style.css" media="screen" >
+    <link rel="stylesheet" href="print.css" media="print" >
+  </head>
+
+  <body id="{{pageID}}" onload="{{onload}}">
+    <a href="#content" class="srOnly">Vai al contenuto</a> {{header}}
+
+    <nav id="menu" class="menu" aria-label="Navigazione Principale">
+      <input type="checkbox" id="mobile-menu-toggle">
+      <div class="mobile-menu-x">
+        <label for="mobile-menu-toggle" class="menu-toggle-label" data-toCloseContent="✕ Chiudi">
+          <span class="mobile-menu-toggle-label-content">☰ Menù</span>
+        </label>
+        <ul class="nav-list">
+          {{menu}}
+        </ul>
+      </div>
+    </nav>
+    <nav id="breadcrumb" aria-label="Percorso">{{breadcrumbs}}</nav>
+
+    <main id="content">{{content}}</main>
+   {{BottomMenu}}
+
+    {{footer}}
+
+    <script src="script/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1354 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --surface-color: #fff;
+    --curve: 40;
+    --headerBgColor: #000;
+    --menuBackground: #000;
+    --headerTxtColor: rgb(255, 255, 255);
+    --menuTxtcolor: #fff;
+    --pageTxtColor: #fff;
+    --logoTxtColor: #cb9407;
+    --bgColor: rgb(0, 0, 0);
+    --txtColor: rgb(0, 0, 0);
+    --footerBgColor: #000;
+    --footerTxtColor: rgb(255, 255, 255);
+    --linkColor: #fff;
+    --visitedLinkColor: #ff6758;
+    /*importante il contrasto tra link visitato e non*/
+    --flagColor: #ff6758;
+    --endPrenotation: #b12d21;
+    --goodEndingMessage: #07a61f;
+    --instructionMessage: #f1ab33;
+    --warningMessage: #ff6758;
+    /* Message status*/
+    --messageTxtColor: white;
+    --errorMessageBgColor: red;
+    --goodMessageBgColor: #06a61f;
+    --curveMessage: 1em;
+    /* Button - Submit */
+    --buttonCurveBorder: 0.6em;
+    --standardOperationBgColor: rgb(2, 117, 0);
+    --standardOperationTxtColor: white;
+    --irreversibleOperationBgColor: #911818;
+    --irreversibleOperationTxtColor: white;
+    --disabledButton: #b12d21;
+    --fieldSetBorderColor: #6ccb07;
+    --LegendTxtColor: #cb9407;
+    --secondBodyColor: #fcf3dc;
+    --secondTitleColor: #c79e63;
+    --alternative_text: #cb9407;
+    --menuToggleColor: #cb9407;
+    --submitButtonColor: rgb(2, 117, 0);
+    --borderMenuItem: rgb(58 58 58);
+    --NavmenuBorder: #fff;
+    --font-body-family: system-ui, "sans-serif", sans-serif;
+}
+
+html {
+    font-size: 100%;
+    font-family: var(--font-body-family);
+    line-height: 1.5em;
+    margin: auto;
+    background-color: var(--bgColor);
+    color: var(--pageTxtColor);
+}
+
+.onlyMobile {
+    display: none;
+}
+
+.srOnly {
+    position: absolute;
+    left: -9999em;
+}
+
+a:link {
+    text-decoration: underline;
+    color: var(--linkColor);
+}
+
+a:visited {
+    color: var(--visitedLinkColor);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: auto;
+}
+
+header {
+    background-color: var(--headerBgColor);
+    padding: 1em;
+    text-align: center;
+}
+
+.warning {
+    color: var(--warningMessage);
+    text-align: center;
+}
+
+.good {
+    color: var(--goodEndingMessage);
+    text-align: center;
+}
+
+.info {
+    padding: .5em;
+}
+
+.warning::before,
+.good::before,
+.info::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    margin-right: .3em;
+    background-repeat: no-repeat;
+}
+
+.warning::before {
+    background-position-y: 7px;
+    background-image: url(assets/icon/warning.png);
+}
+
+.good::before {
+    background-image: url(assets/icon/check.png);
+}
+
+.info::before {
+    width: 25px;
+    height: 25px;
+    background-image: url(assets/icon/info.png);
+}
+
+h1.logo {
+    text-transform: uppercase;
+    color: var(--logoTxtColor);
+}
+
+h2.logo {
+    letter-spacing: .28em;
+}
+
+footer .logo {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--logoTxtColor);
+    font-weight: bold;
+    letter-spacing: 0;
+}
+
+footer .logo2 {
+    font-size: 1.5em;
+    letter-spacing: .28em;
+    font-weight: bold;
+}
+
+nav.menu {
+    background-color: var(--headerBgColor);
+    align-items: center;
+    padding: 10px;
+}
+
+nav.menu ul,
+#login ul,
+#signIn ul,
+#prenotazione ul,
+#listaAllergeni {
+    text-align: center;
+    list-style-type: none;
+}
+
+#loginLegend {
+    text-align: center;
+}
+
+nav.menu ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav.menu ul li a {
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-underline-offset: .3em;
+}
+
+
+/*ALLERGENI*/
+
+.menuItem .allergeneImage {
+    margin: 0;
+}
+
+.allergeniPlateList,
+.allergeniPlateList+dd {
+    display: inline-block;
+}
+
+.labelForAllergeneChbox {
+    display: inline;
+}
+
+#listaAllergeni .allergeneImage {
+    position: relative;
+    top: 0.4em;
+    left: 0.5em;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.menuItem .allergeneImage {
+    text-indent: -9999em;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.CrostaceiImage {
+    background: url(assets/icon/Crostacei.png) center center/contain no-repeat;
+}
+
+.PesceImage {
+    background: url(assets/icon/fish.png) center center/contain no-repeat;
+}
+
+.SedanoImage {
+    background: url(assets/icon/celery.png) center center/contain no-repeat;
+}
+
+.SenapeImage {
+    background: url(assets/icon/mustard.png) center center/contain no-repeat;
+}
+
+.SoiaImage {
+    background: url(assets/icon/soy.png) center center/contain no-repeat;
+}
+
+.UovaImage {
+    background: url(assets/icon/eggs.png) center center/contain no-repeat;
+}
+
+#breadcrumb {
+    justify-content: flex-start;
+    padding-left: 0.5em;
+}
+
+#menuTitle {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.containerPlatesViewer {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+}
+
+.flexable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flexable>li {
+    list-style-type: none;
+}
+
+.containerPlatesViewer ul {
+    font-size: 90%;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--menuBackground);
+    color: var(--menuTxtcolor);
+}
+
+.menuItem {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    min-width: 175px;
+    max-width: 400px;
+    background-color: var(--menuBackground);
+    text-align: left;
+    border: 0.5px solid var(--borderMenuItem);
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 0.5em;
+    transition: 0.5s;
+}
+
+.menuItem dl {
+    padding-left: 0.5em;
+}
+
+.menuItem.oldOrders {
+    border: 1px solid #6f6969;
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+.infoItem {
+    padding-left: 4%;
+}
+
+.allergeniPlateList {
+    list-style-type: none;
+}
+
+.prezzo,
+.quantitaOrdine {
+    float: right;
+    padding: 0.5em;
+}
+
+.imageMenuItem {
+    width: 135px;
+    height: 135px;
+    display: block;
+    border: none;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.imageMenuItem source,
+.imageMenuItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.containerPlatesViewer .nomePiatto {
+    display: block;
+    font-weight: bold;
+}
+
+dd.ingradienti {
+    color: var(--flagColor);
+    padding: .4em 0 .4em;
+}
+
+main {
+    margin: 0;
+    padding-top: 0.5em;
+}
+
+footer {
+    background-color: var(--footerBgColor);
+    color: var(--footerTxtColor);
+    text-align: center;
+    border-top: 1px solid var(--NavmenuBorder);
+    margin-top: auto;
+}
+
+#footerOrganizer {
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer dt {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--LegendTxtColor);
+    font-size: 1.3em;
+    padding-top: 0.2em;
+}
+
+footer div,
+footer dl {
+    min-width: 200px;
+    text-align: left;
+    padding: 1em;
+}
+
+footer div {
+    padding: 1em;
+}
+
+#footerDesc {
+    max-width: 300px;
+}
+
+.valid {
+    display: inline;
+    margin-top: 0.4em;
+}
+
+#footerRights,
+#adminFooterRights {
+    display: inline;
+}
+
+a.socialLogo::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    margin-right: .3em;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+a.socialLogo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+a.instagramLogo::before {
+    background-image: url(assets/icon/instagram.png);
+}
+
+a.facebookLogo::before {
+    background-image: url(assets/icon/facebook-app-symbol.png);
+}
+
+a.tikTokLogo::before {
+    background-image: url(assets/icon/tik-tok.png);
+}
+
+
+/******************* SITO: MESSAGGI *********************/
+
+.message {
+    text-align: center;
+    color: var(--messageTxtColor);
+    margin: auto;
+    width: 40%;
+    border-radius: var(--curveMessage);
+    padding: 1em;
+}
+
+.message.title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.message.msgError {
+    background-color: var(--errorMessageBgColor);
+}
+
+.message.msgGood {
+    background-color: var(--goodMessageBgColor);
+}
+
+
+/******************* SITO: PULSANTI FORM **********************/
+
+.button {
+    min-width: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: var(--buttonCurveBorder);
+    margin-top: 1em;
+    padding: 0.5em;
+    border: 0;
+}
+
+.button.azioneStandard,
+.button.sendButton {
+    color: var(--standardOperationTxtColor);
+    background-color: var(--standardOperationBgColor);
+}
+
+.button.azioneIrreversibile {
+    color: var(--irreversibleOperationTxtColor);
+    background-color: var(--irreversibleOperationBgColor);
+}
+
+.button.small {
+    font-size: 1em;
+}
+
+
+/******************* HOME &gt;&gt; SIGNIN **********************/
+
+#signInButton {
+    font-size: 1.5em;
+}
+
+
+/*******************MENU *********************/
+
+.downloadSize {
+    display: inline;
+}
+
+dl.ListinoPrezzi {
+    padding: .5em;
+    justify-content: center;
+}
+
+dl.ListinoPrezzi div {
+    display: inline-block;
+}
+
+.iconTime {
+    max-width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    display: block;
+}
+
+.Cena {
+    background-image: url(assets/Images/moon.PNG);
+}
+
+.Pranzo {
+    background-image: url(assets/Images/sun.PNG);
+}
+
+.infoPlateImportant {
+    font-weight: bold;
+}
+
+.infoPlates {
+    display: inline;
+}
+
+.ListinoPrezzi dd {
+    color: var(--alternative_text);
+    font-weight: bold;
+    display: block;
+    font-size: 3em;
+    padding-top: 0.5em;
+}
+
+.ListinoPrezzi dt {
+    font-weight: bold;
+}
+
+.ListinoPrezzi div {
+    padding: 1.5em;
+}
+
+#signIn h2,
+#login h2,
+#prenotazione h2,
+.containerPlatesViewer h2,
+.prices h2 {
+    color: var(--alternative_text);
+    margin: .5em;
+}
+
+.prices {
+    text-align: center;
+}
+
+.containerPlatesViewer>p {
+    padding-bottom: 1em;
+}
+
+
+/*******************PRENOTA *********************/
+
+.hide {
+    display: none;
+}
+
+.inptQuantita {
+    width: 3em;
+}
+
+fieldset {
+    border: 0;
+    border-radius: 8px;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+fieldset legend {
+    color: var(--LegendTxtColor);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+}
+
+.submitPrenotazione,
+#signIn button,
+#login button,
+#prenotazione button
+/* input[type="submit"] Implementato sopra sulla def dei pulsanti*/
+
+{
+    background-color: var(--submitButtonColor);
+    color: #fff;
+    min-width: 30px;
+    font-size: 1.3em;
+    border-radius: 10px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 0;
+    text-align: center;
+}
+
+fieldset ul li {
+    margin: 1em;
+    text-align: center;
+    max-width: 650px;
+}
+
+#listaAllergeni li {
+    display: inline-block;
+    padding: 1em;
+}
+
+#allergeni {
+    text-align: center;
+}
+
+#allergeni fieldset {
+    padding: 0;
+    margin: 0;
+}
+
+#allergeni input[type="checkbox"] {
+    position: absolute;
+    left: -9999em;
+}
+
+#allergeni input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+#allergeni input[type="checkbox"]:focus+label {
+    outline: 1px solid #fff;
+}
+
+#allergeni input[type="checkbox"]+label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    transition: background 0.3s;
+}
+
+#allergeni input[type="checkbox"]:checked+label:before {
+    background-color: #3498db;
+}
+
+#allergeni input[type="checkbox"]+label:after {
+    content: "\2713";
+    position: absolute;
+    left: 4px;
+    top: 0;
+    color: #ffffff;
+    font-size: 16px;
+    visibility: hidden;
+    transition: color 0.3s;
+}
+
+#allergeni input[type="checkbox"]:checked+label:after {
+    visibility: visible;
+}
+
+.inputQuantityLabelInpt {
+    float: right;
+    text-align: right;
+}
+
+
+/*******************login signin prenotazione *********************/
+
+.instruction {
+    max-width: 600px;
+    color: var(--instructionMessage);
+    margin: auto;
+}
+
+#login,
+#signIn,
+#prenotazione {
+    text-align: center;
+}
+
+#signIn label,
+#login label,
+#prenotazione label {
+    font-size: 1.4em;
+}
+
+#signIn fieldset,
+#login fieldset,
+#prenotazione fieldset {
+    width: fit-content;
+}
+
+#signIn ul,
+#login ul,
+#prenotazione ul {
+    text-align: right;
+    width: fit-content;
+}
+
+#signIn form,
+#login form,
+#prenotazione form {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+
+input {
+    padding: .2em;
+    font-size: 1.2em;
+}
+
+label[for="indicazioniAggiuntive"] {
+    display: block;
+}
+
+textarea {
+    margin-top: .4em;
+    width: 95%;
+    max-width: 300px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+
+/*******************HOME************************/
+
+.homeImage {
+    background-image: url(assets/Images/japan.jpg);
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin: 0;
+    padding: 0;
+}
+
+#homeTitle {
+    position: relative;
+    top: 70%;
+    text-align: center;
+    color: #fff;
+    text-shadow: 3px 3px 2px #000, -3px 3px 2px #000, -3px -3px 0 #000, 3px -3px 0 #000;
+}
+
+#homeTitle {
+    font-size: 2em;
+    line-height: 1em;
+}
+
+.overlay {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.homeSection {
+    text-align: left;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+#homeDescription {
+    margin-top: 2em;
+}
+
+.homeSection div {
+    padding: 2em;
+    max-width: 500px;
+    flex-grow: 1;
+}
+
+.homeSection h3 {
+    color: var(--LegendTxtColor);
+    font-size: 1.8em;
+    padding: 1em;
+}
+
+.homeSection p {
+    padding: 1em;
+}
+
+#presentationMenu {
+    background-color: var(--secondBodyColor);
+    color: #000;
+}
+
+#presentationMenu h3 {
+    color: #000;
+}
+
+.homeSection .image {
+    width: 300px;
+    min-height: 300px;
+    max-width: 100vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin: 0.5em;
+}
+
+#restaurantImage {
+    background-image: url(assets/Images/restoraunt.jpg);
+    position: relative;
+    top: -3em;
+}
+
+#imageDescription {
+    background-image: url(assets/Images/sushiPres2.jpg);
+}
+
+#qualityImage {
+    background-image: url(assets/Images/quality.jpg);
+}
+
+
+/**CHI SIAMO***/
+
+.componentList {
+    list-style: none;
+    margin: 2em;
+    justify-content: space-around;
+}
+
+#chiSiamoSection h2 {
+    padding: 1em;
+    text-align: center;
+}
+
+.componentList li {
+    min-height: 300px;
+    background: #fff;
+    border-radius: calc(var(--curve) * 1px);
+    margin: 1em;
+    padding: .2em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+}
+
+.card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    padding: 0;
+}
+
+.card__image {
+    min-height: 250px;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+    transform: translateY(0);
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.card__arc path {
+    fill: var(--surface-color);
+}
+
+.card:hover .card__header {
+    transform: translateY(0);
+}
+
+.card__thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+}
+
+.card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__status {
+    font-size: .8em;
+    color: #787175;
+}
+
+.card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #787175;
+    overflow: hidden;
+}
+
+
+/****ADMIN PANEL*********/
+
+.DoneButton {
+    min-width: 65px;
+    height: 32px;
+    background-color: var(--submitButtonColor);
+    color: var(--pageTxtColor);
+    border-radius: 5px;
+    border: 0;
+    float: right;
+}
+
+input[type="submit"].doneButton {
+    font-size: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
+    background-color: var(--submitButtonColor);
+}
+
+.buttonDoneCompleted:disabled,
+.disabledButton {
+    background-color: var(--disabledButton);
+}
+
+#piattiDaFare .buttonDoneCompleted::after {
+    content: attr(data-onDoneContent);
+}
+
+
+/***TABLE MANAGMENT**********/
+
+.tableList,
+.ActivePrenotationList {
+    padding: 1em;
+    list-style-type: none;
+    margin: .3em;
+}
+
+.tableList li,
+.ActivePrenotationList li {
+    padding: .5em;
+    font-size: 1.3em;
+}
+
+.ActivePrenotationList li {
+    border-top: 1px solid var(--flagColor);
+    margin-bottom: 1em;
+    min-height: 75px;
+}
+
+.ActivePrenotationList li button {
+    margin: 1em 0 1em
+}
+
+.meterTable {
+    width: 65%;
+    transform: scale(1.5);
+    height: 20px;
+    border: 1px solid #fff
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#SezioneGestioneTavoli,
+#SezioneGestionePrenotazioni {
+    text-align: center;
+    flex-grow: 1;
+}
+
+#SezioneGestionePrenotazioni ul {
+    text-align: right;
+}
+
+#SezioneGestionePrenotazioni h2,
+#SezioneGestioneTavoli h2 {
+    padding: .5em;
+}
+
+.ActivePrenotationList dt {
+    font-weight: bold;
+    color: var(--alternative_text);
+}
+
+#SezioneGestionePrenotazioni .buttonDoneCompleted::after {
+    content: ' - Terminata';
+}
+
+.infoPersonalArea h1 {
+    color: var(--alternative_text);
+    text-align: center;
+}
+
+.mainTitle {
+    color: var(--LegendTxtColor);
+    text-align: center;
+    padding: 0.3em;
+}
+
+.infoPersonalArea {
+    margin: 1em;
+    border-left: 3px solid var(--alternative_text);
+    padding-left: 1em;
+}
+
+.infoPersonalArea dt {
+    font-weight: bold;
+    color: var(--alternative_text);
+    font-size: 1.3em;
+}
+
+.infoPersonalArea h2 {
+    font-size: 1.4em;
+    padding-top: .4em;
+}
+
+.infoPersonalArea dl {
+    padding-left: .5em;
+    padding-top: .2em;
+}
+
+.infoPersonalArea dd {
+    padding-left: .5em;
+    padding-top: .2em;
+    list-style-type: disc;
+}
+
+.infoPersonalArea dd::before {
+    content: "- ";
+}
+
+
+/*******************404 e 500*********************/
+
+#Section404,
+#Section500 {
+    text-align: center;
+    padding: 2em;
+}
+
+#Section404 p,
+#Section500 p {
+    margin: auto;
+    max-width: 50vw;
+}
+
+#nigiriTriste {
+    width: 15em;
+    height: auto;
+}
+
+#nigiriKO {
+    width: 15em;
+    height: auto;
+}
+
+
+/**NAVBAR MOBILE***/
+
+.menu-toggle-label,
+#mobile-menu-toggle {
+    cursor: pointer;
+    text-align: right;
+    color: var(--menuToggleColor);
+    font-weight: bold;
+}
+
+.menu-toggle-label {
+    display: none;
+    font-size: 1.4em;
+}
+
+#mobile-menu-toggle {
+    display: none;
+}
+
+#mobile-menu-toggle:focus+.menu-toggle-label {
+    outline: 1px solid #fff;
+}
+
+.bottomMenu li a:link {
+    color: var(--linkColor);
+}
+
+.bottomMenu li a:visited {
+    color: var(--visitedLinkColor);
+}
+
+.bottomMenu .ImieiOrdini {
+    background-image: url('assets/icon/list.png');
+}
+
+.bottomMenu .Ordina {
+    background-image: url('assets/icon/sushi2.png');
+}
+
+.bottomMenu .Prenota {
+    background-image: url('assets/icon/management.png');
+}
+
+.bottomMenu ul {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 100%;
+}
+
+.bottomMenu li {
+    padding: .3em;
+    position: relative;
+    list-style: none;
+    /* Rimuove i punti elenco predefiniti */
+    font-size: 12px;
+    display: grid;
+    grid-template-rows: auto auto;
+    place-items: center;
+    width: 10em;
+    /* Centra gli elementi verticalmente e orizzontalmente */
+}
+
+.bottomMenu li a {
+    display: grid;
+    grid-template-rows: auto auto;
+    place-items: center;
+    /* Centra gli elementi verticalmente e orizzontalmente */
+}
+
+.bottomMenu li a .ListIcon {
+    grid-row: 1;
+    /* Posiziona nella prima riga */
+}
+
+.bottomMenu li a p {
+    grid-row: 2;
+    /* Posiziona nella prima riga */
+}
+
+.bottomMenu li .ListIcon {
+    width: 25px;
+    /* Larghezza dell'icona */
+    height: 25px;
+    /* Altezza dell'icona */
+    background-size: contain;
+    /* Adatta l'icona alle dimensioni specificate */
+    background-repeat: no-repeat;
+    grid-row: 1;
+    /* Posiziona nella prima riga */
+}
+
+.bottomMenu li p,
+.bottomMenu li a p {
+    grid-row: 2;
+    /* Posiziona nella prima riga */
+}
+
+.bottomMenu {
+    z-index: 100;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    left: 0.01em;
+    right: 0;
+    width: 101vw;
+    height: 55px;
+    margin: 0;
+    border-top: 2px solid #fff;
+}
+
+
+/********************* SITO: ADMIN > ELIMINAZIONE PRENOTAZIONE CONFERMA ****************/
+
+#richiestaConferma {
+    text-align: center;
+    margin: 1em;
+    padding: 1em;
+    margin: auto;
+}
+
+
+/* Stili per schermi di larghezza massima 600px */
+
+@media only screen and (max-width: 850px) {
+    .menu-toggle-label {
+        display: block;
+        z-index: 3;
+    }
+    nav.menu ul li.bigScreenOnly {
+        display: none;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        background-color: var(--headerBgColor);
+    }
+    #mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        left: -9999em;
+    }
+    #mobile-menu-toggle:not(:checked)+.mobile-menu-x:focus-within>.nav-list,
+    #mobile-menu-toggle:checked+.mobile-menu-x>.nav-list {
+        position: static;
+        height: auto;
+        overflow: auto;
+    }
+    .mobile-menu-x:focus-within>.menu-toggle-label>.mobile-menu-toggle-label-content,
+    #mobile-menu-toggle:checked+.mobile-menu-x>.menu-toggle-label>.mobile-menu-toggle-label-content {
+        display: none;
+    }
+    /* Cambia il contenuto prima dell'icona quando il checkbox è selezionato */
+    .mobile-menu-x:focus-within>.menu-toggle-label::before,
+    #mobile-menu-toggle:checked+.mobile-menu-x>.menu-toggle-label::before {
+        content: attr(data-toCloseContent);
+    }
+    .mobile-menu-x {
+        display: inline;
+    }
+    /* Animazione di transizione */
+    .nav-list {
+        transition: display 0.3s ease-in-out;
+    }
+    .nav-list li {
+        font-size: 1.3em;
+        margin: 0;
+        text-align: center;
+        padding: 10px;
+    }
+    .onlyMobile {
+        display: block;
+    }
+    .homeImage {
+        height: 40vh;
+    }
+    #footerOrganizer {
+        justify-content: start;
+    }
+    footer {
+        margin-bottom: 55px;
+    }
+    #restaurantImage {
+        top: 0;
+    }
+    .homeSection p {
+        padding: 0;
+    }
+    .homeSection h3 {
+        padding: 0;
+        padding-bottom: 1em;
+    }
+    .bottomMenu li p,
+    .bottomMenu li a p {
+        font-size: 1.5em;
+    }
+}
+
+
+/* Stili per schermi mobile */
+
+@media only screen and (max-width: 480px) {
+    .menuItem {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .infoItem {
+        width: 100%;
+    }
+    fieldset {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .containerPlatesViewer {
+        width: 100%;
+        padding: 0;
+    }
+    .button.azioneStandard,
+    .button.azioneIrreversibile {
+        margin: .2em;
+    }
+}
+
+
+/* Stili per schermi di larghezza superiore a 1024 */
+
+@media only screen and (min-width: 1024px) {
+    body {
+        max-width: 1024px;
+    }
+    .containerPlatesViewer ul {
+        font-size: 85%;
+    }
+    .homeImage {
+        max-height: 60vh;
+    }
+}

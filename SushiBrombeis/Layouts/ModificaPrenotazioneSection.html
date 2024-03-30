@@ -1,0 +1,56 @@
+<h1 class="mainTitle">Benvenuto nella tua area personale</h1>
+{{Message}}
+<section class='infoPersonalArea'>
+      <h2>Cosa puoi fare qui?</h2>
+      <dl>
+        <dt>Prenota un posto al tavolo</dt>
+        <dd> <a href="#prenotazione">Modifica la tua prenotazione</a>, anche da casa!</dd>
+        <dd><strong>Attenzione: se non ti presenti entro un'ora dalla prenotazione, i responsabili potrebbero cancellarla!!!</strong></dd>
+        <dd>Quando arrivi al ristorante potrai sederti al tavolo indicato alla prenotazione.</dd>
+        <dt>Ordina i piatti</dt>
+        <dd>Dalla pagina "<a href="Prenota.php">Ordina</a>" ordina i tuoi piatti.</dd>
+        <dd>Dalla pagina "<a href="VisualizzaOrdini.php">I miei Ordini</a>" potrai visualizzare gli ordini della prenotazione, visualizzarne lo stato di preparazione e scoprire i tuoi piatti preferiti di sempre.</dd>
+      </dl>
+</section>
+<section id="prenotazione">
+  <h2>Modifica la tua prenotazione</h2>
+  <p class="info">Modifica qui le indicazioni aggiuntive sulla tua prenotazione.</p>
+  <form action="process/modifyPrenotazione_process.php" method="post">
+    <fieldset>
+      <legend>Inserisci dati</legend>
+      <ul>
+        <li>
+          <label for="n_persone">Numero di persone:</label>
+          <input
+            type="number"
+            id="n_persone"
+            name="n_persone"
+            value="{{NumeroPersone}}"
+            disabled
+          >
+        </li>
+
+        <li>
+          <label for="n_tavolo">Numero tavolo:</label>
+          <input
+            type="number"
+            id="n_tavolo"
+            name="n_tavolo"
+            value="{{NumeroTavolo}}"
+            disabled
+          >
+        </li>
+        <li>
+          <label for="indicazioniAggiuntive">Indicazioni aggiuntive:</label>
+          <textarea
+            id="indicazioniAggiuntive"
+            name="indicazioniAggiuntive"
+            rows="4"
+            cols="50"
+          >{{IndicazioniAggiuntive}}</textarea>
+        </li>
+      </ul>
+      <input type="submit" class="button sendButton" value="Modifica" >
+    </fieldset>
+  </form>
+</section>

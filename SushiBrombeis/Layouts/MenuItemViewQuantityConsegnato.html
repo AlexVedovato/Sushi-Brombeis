@@ -1,0 +1,24 @@
+<li class="menuItem">
+  <picture  class="imageMenuItem">
+    <source srcset="assets/Images/sushi_plates/{{NomePiattoUnderscored}}.webp" type="image/webp">
+    <img src="assets/Images/sushi_plates/{{NomePiattoUnderscored}}.jpg" alt="">
+  </picture>
+  <div class="infoItem">
+    <dl>
+      <dt class="nomePiatto" data-title="Nome Piatto" lang="it">
+        {{NomePiatto}}
+      </dt>
+      <dd class="ingradienti" data-title="Descrizione ingredienti">
+        {{Descrizione}}
+      </dd>
+      <dd data-title="Quantità">
+        Quantità:
+        <p class="infoPlateImportant infoPlates">{{Quantita}}</p>
+      </dd>
+      <dd data-title="Consegnato">
+        Consegnato:
+        <p class="infoPlateImportant infoPlates">{{isConsegnato}}</p>
+      </dd>
+    </dl>
+  </div>
+</li>

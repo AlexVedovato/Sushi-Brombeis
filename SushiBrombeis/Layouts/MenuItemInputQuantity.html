@@ -1,0 +1,31 @@
+<li class="menuItem {{ListaAllergeni}}">
+  <picture  class="imageMenuItem">
+    <source srcset="assets/Images/sushi_plates/{{NomePiattoUnderscored}}.webp" type="image/webp">
+    <img src="assets/Images/sushi_plates/{{NomePiattoUnderscored}}.jpg" alt="">
+  </picture>
+  <div class="infoItem">
+    <dl>
+      <dt class="nomePiatto" data-title="Nome Piatto">{{NomePiatto}}</dt>
+      <dd class="ingradienti" data-title="Descrizione ingredienti">
+        {{Descrizione}}
+      </dd>
+      <dt class="allergeniPlateList">Allergeni:</dt>
+
+      {{Allergeni}}
+    </dl>
+    <div class="inputQuantityLabelInpt">
+      <label for="quantita_{{IDPiatto}}">Quantità {{NomePiatto}}:</label>
+      <input
+        type="number"
+        class="inptQuantita"
+        id="quantita_{{IDPiatto}}"
+        name="quantita_{{IDPiatto}}"
+        value="0"
+        min="0"
+        max="10"
+        aria-valuenow="0"
+       
+      >
+    </div>
+  </div>
+</li>

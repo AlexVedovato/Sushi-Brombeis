@@ -1,0 +1,33 @@
+<section id="login">
+  <h2><span lang="en">Login</span></h2>
+  {{error}}
+  <form action="process/login_request.php" onsubmit="return validateForm();" method="post">
+    <fieldset>
+      <legend id="loginLegend">Inserisci i dati di accesso</legend>
+      <p>(* = Campo obbligatorio)</p>
+      <ul>
+        <li>
+          <label for="username_or_email">
+            <span lang="en">Username</span> o
+            <span lang="en">Email</span> *:
+          </label>
+          <input
+            type="text"
+            id="username_or_email"
+            name="username_or_email"
+          >
+        </li>
+        <li>
+          <label for="password"><span lang="en">Password *:</span></label>
+          <input type="password" id="password" name="password">
+        </li>
+      </ul>
+
+      <input type="submit" id="loginButton" class="button sendButton" value="Login">
+    </fieldset>
+  </form>
+  <p>
+    Nuovo utente?
+    <a href="signIn.php" title="link utile a registrarsi">Registrati</a>
+  </p>
+</section>
