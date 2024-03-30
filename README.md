@@ -1,1 +1,9 @@
 # Sushi-Brombeis
+Progetto di gruppo del corso di Tecnologie Web Unipd A.A. 2023-2024
+
+## Descrizione
+Il progetto consiste nella realizzazione di un sito web per un ristorante sushi all you can eat, con l’obiettivo di proporre un'interfaccia flessibile che possa essere utilizzata sia dai clienti che dai ristoratori, in modo da ottimizzare la gestione dell'intera esperienza gastronomica.
+Viene offerta un'interfaccia utente intuitiva, che permette a chiunque di visualizzare le informazioni più rilevanti riguardanti il ristorante e il menù senza necessità di effettuare il login, fornendo informazioni di base e una divisione chiara tra il menù pranzo e cena, quest'ultimo includente una selezione più ampia di piatti rispetto al menù pranzo.
+La registrazione è richiesta solo per effettuare prenotazioni e le ordinazioni dei piatti al tavolo, consentendo oltretutto agli utenti di visualizzare i loro ordini più frequenti per utilizzi futuri e la visualizzazione dello stato degli ordini effettuati. Inoltre, ogni piatto è accompagnato da informazioni sugli allergeni presenti, permettendo agli utenti di escludere dalla vista i piatti contenenti specifici allergeni.
+La gestione degli ordini è semplificata per il ristoratore attraverso un'interfaccia dedicata che consente di visualizzare tutti i piatti ordinati dai clienti ai tavoli, segnalare quelli già preparati, visualizzando anche il tavolo a cui devono essere consegnati. Sempre per il ristoratore è disponibile un'interfaccia aggiuntiva che consente la visualizzazione dello stato di occupazione dei tavoli e facilita la gestione, inclusa la terminazione o l'eliminazione, oltre alla visualizzazione delle prenotazioni attive.
+In conclusione, il progetto non solo modernizza il processo di gestione di un ristorante sushi all you can eat, ma si impegna a offrire un'esperienza completa, garantendo la soddisfazione del cliente e semplificando il lavoro del ristoratore.
